@@ -97,7 +97,7 @@ textarea {
 
 
 html {
-  background-color: #fff;
+  background-color: #202020;
   height: 100%;
   width: 100%;
 }
@@ -105,14 +105,15 @@ html {
 body {
   font-family: 'Source Sans Pro', sans-serif;
   padding: 2em;
-  font-size: 1.25em;
+  font-size: 1em;
   height: 100%;
 }
 
 .wrapper {
   /*add display:flex and set justify-content to space-between*/
-  font-weight: 700;
+  font-weight: 400;
   display: flex;
+  flex-flow: row wrap;
   justify-content: space-between;
 }
 
@@ -123,16 +124,17 @@ body {
   color: #fff;
   line-height: 1.5em;
   font-size: 1.6em;
-  background-color: #f16059;
-  height: 300px;
+  height: auto;
   display: flex;
-  width: 30%;
   justify-content: center;
   align-items: center;
+  /*-----width 30% for desktop, see @media queries-----*/
 }
 
-
-
+.wrapper span {
+    font-family: 'Lora', serif;
+    font-size: 1.2em;
+}
 
 /* ==========================================================================
    Helper classes
@@ -213,6 +215,22 @@ body {
    These examples override the primary ('mobile first') styles.
    Modify as content requires.
    ========================================================================== */
+
+/*-------------------Desktop-----------------------*/
+
+@media (min-width: 1200px) {
+    .div-1,
+    .div-2,
+    .div-3 {
+        width: 30%;
+    }
+
+    .div-1,
+    .div-2 {
+        border-right: 1px dotted #505050;
+        padding-right: 1.5%;
+    }
+}
 
 @media print,
        (-webkit-min-device-pixel-ratio: 1.25),
