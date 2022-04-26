@@ -97,17 +97,21 @@ textarea {
 
 
 html {
-  background-color: #202020;
+  background-color: #353535;
   height: 100%;
   width: 100%;
 }
 
 body {
+  color: #fff;
   font-family: 'Source Sans Pro', sans-serif;
-  padding: 2em;
+  padding: 1.5em 2em;
   font-size: 1em;
   height: 100%;
+  display: flex;
+  justify-content: center;
 }
+
 
 .wrapper {
   /*add display:flex and set justify-content to space-between*/
@@ -115,26 +119,64 @@ body {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
-}
-
-.div-1, 
-.div-2, 
-.div-3 {
-  /*give the divs a width of 30%, add display:flex, set justify-content and align-items to center*/
-  color: #fff;
-  line-height: 1.5em;
-  font-size: 1.6em;
-  height: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /*-----width 30% for desktop, see @media queries-----*/
+  max-width: 1400px;
 }
 
 .wrapper span {
     font-family: 'Lora', serif;
     font-size: 1.2em;
 }
+
+header,
+main,
+footer {
+   width: 100%;
+   display: flex;
+   justify-content: flex-start; 
+}
+
+h1 {
+  color: #f00;
+  font-size: 3.5em;
+}
+
+main {
+    border-bottom: 2px solid #606060;
+    margin-bottom: 10px;
+}
+
+main p {
+    color: #fff;
+    font-size: 1.7em;
+}
+
+.flex-items {
+  /*give the divs a width of 30%, add display:flex, set justify-content and align-items to center*/
+  color: #fff;
+  line-height: 1.5em;
+  font-size: 1.6em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*-----width 30% for desktop, see @media queries-----*/
+}
+
+#div-1,
+#div-2 {
+    border-bottom: 1px dotted #606060;
+}
+
+
+footer {
+    font-size: 2em;
+    border-top: 2px solid #606060;
+    margin-top: 10px;
+}
+
+footer i {
+    color: #f00;
+    padding: 30px 20px 0 0;
+  }
 
 /* ==========================================================================
    Helper classes
@@ -218,17 +260,22 @@ body {
 
 /*-------------------Desktop-----------------------*/
 
+@media all and (max-width: 768px) {
+    body {
+        padding: 1em;
+    }
+}
+
 @media (min-width: 1200px) {
-    .div-1,
-    .div-2,
-    .div-3 {
-        width: 30%;
+    .flex-items {
+        flex-basis: 30%;
     }
 
-    .div-1,
-    .div-2 {
-        border-right: 1px dotted #505050;
+    #div-1,
+    #div-2 {
+        border-right: 1px dotted #606060;
         padding-right: 1.5%;
+        border-bottom: none;
     }
 }
 
